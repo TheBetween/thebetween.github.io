@@ -3,93 +3,149 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>In Between</title>
+  <title>The Between</title>
+
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body>
+<body onload='start()'>
 
-<div class="navbar-fixed">
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">The_Dame</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+<div class="navbar-fixed" style='width:100%;text-align:center;position:fixed;background:#343434'>
+      <a style='padding-top:10px;display:block' id="logo-container" href="#" class="heading">the between</a>
 </div><!-- navbar-fixed -->
-
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Starter Template</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-      </div>
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div>
-      <br><br>
-
-    </div>
-  </div>
 
 
   <div class="container">
-    <div class="section">
 
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+<div class="theSlider">
+  <div class='slide'>
+    <h1 class='heading'>
+    </h1>
+    <div style='color:white; font-size:24px;'>
+    <p>
+    The between of your personal context and current state is here symbolized by temperament (a more fixed aspect of you) and emotion (a more changing aspect of you), although context could also include personal history, culture, and learned defenses; current state could also include bodily state and immediate happenings.
+    </p><p>
+This tool is designed to help you consider your current emotional state, to help you share your emotional self with another, and to visualize the between: it is in that space that we are presently defined.
+</p><p>
+The between of you and another = the function of [the function of (your personal context)(your current state)][the function of (their personal context)(their current state)]
+</p><p>
+<b>"There are no things; there are only relationships."<br><p style='text-align:right'> -Sir Iain McGilchrist<p></b>
+    </p>
+  </div>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <br><br>
-
-    <div class="section">
-
+    <div class='options'>
+      <a class="waves-effect waves-light btn blue" href="javascript:$('.theSlider').slick('slickNext');"><i class="material-icons right">navigate_next</i>Next</a>
     </div>
   </div>
 
-  <footer class="page-footer orange">
+  <div class='slide'>
+    <p class='question'>
+    how useful is this feeling? (lower numbers would mean this feeling is motivating your thoughts or behavior in an unhelpful way; higher numbers would mean this feeling is motivating your thoughts or behavior in a helpful way.)
+    </p>
+    <p class='rangeslider range-field'>
+      <input type='range' id='slider1' min='1' max='10' step='1'>
+    </p>
+
+    <div class='options'>
+      <a class="waves-effect waves-light btn red" href="javascript:$('.theSlider').slick('slickPrev');"><i class="material-icons left">navigate_before</i>Back</a>
+      <a class="waves-effect waves-light btn blue" href="javascript:$('.theSlider').slick('slickNext');"><i class="material-icons right">navigate_next</i>Next</a>
+    </div>
+  </div>
+
+  <div class='slide'>
+    <p> class='question'
+    how pleasant is this feeling? (lower numbers would mean this feeling is less enjoyable; higher numbers would mean this feeling is more enjoyable.)
+    </p>
+    <p class='rangeslider range-field'>
+      <input type='range' id='slider2' min='1' max='10' step='1'>
+    </p>
+    <div class='options'>
+      <a class="waves-effect waves-light btn red" href="javascript:$('.theSlider').slick('slickPrev');"><i class="material-icons left">navigate_before</i>Back</a>
+      <a class="waves-effect waves-light btn blue" href="javascript:$('.theSlider').slick('slickNext');"><i class="material-icons right">navigate_next</i>Next</a>
+    </div>
+  </div>
+
+  <div class='slide'>
+    <p class='question'>
+    how much control do you have over this feeling? (lower numbers would mean you’re aware of this feeling but it isn’t dictating your thoughts or behavior; higher numbers would mean this feeling is controlling your current thoughts or behavior.)
+    </p>
+    <p class='rangeslider range-field'>
+      <input type='range' id='slider3' min='1' max='10' step='1'>
+    </p>
+    <div class='options'>
+      <a class="waves-effect waves-light btn red" href="javascript:$('.theSlider').slick('slickPrev');"><i class="material-icons left">navigate_before</i>Back</a>
+      <a class="waves-effect waves-light btn blue" href="javascript:$('.theSlider').slick('slickNext');"><i class="material-icons right">navigate_next</i>Next</a>
+    </div>
+  </div>
+  
+  <div class='slide'>
+    <p class='question'>
+    how intense is this feeling? (lower numbers would mean this feeling is more subtle; higher numbers would mean this feeling is more extreme.)
+    </p>
+    <p class='rangeslider range-field'>
+      <input type='range' id='slider4' min='1' max='10' step='1'>
+    </p>
+    <div class='options'>
+      <a class="waves-effect waves-light btn red" href="javascript:$('.theSlider').slick('slickPrev');"><i class="material-icons left">navigate_before</i>Back</a>
+      <a class="waves-effect waves-light btn blue" href="javascript:$('.theSlider').slick('slickNext');"><i class="material-icons right">navigate_next</i>Next</a>
+    </div>
+  </div>
+  
+  <div class='slide'>
+    <p class='question'>
+    how sensitive are you? (lower numbers would mean you are less affected by internal or external changes; higher numbers would mean you are more affected by internal or external changes.)
+    </p>
+    <p class='rangeslider range-field'>
+      <input type='range' id='slider5' min='1' max='10' step='1'>
+    </p>
+    <div class='options'>
+      <a class="waves-effect waves-light btn red" href="javascript:$('.theSlider').slick('slickPrev');"><i class="material-icons left">navigate_before</i>Back</a>
+      <a class="waves-effect waves-light btn blue" href="javascript:$('.theSlider').slick('slickNext');"><i class="material-icons right">navigate_next</i>Next</a>
+    </div>
+  </div>
+  
+  <div class='slide'>
+    <p class='question'>
+    how reactive are you? (lower numbers would mean you are less outwardly expressive in response to internal or external changes; higher numbers would mean you are more expressive in response to internal or external changes.)
+    </p>
+    <p class='rangeslider range-field'>
+      <input type='range' id='slider6' min='1' max='10' step='1'>
+    </p>
+    <div class='options'>
+      <a class="waves-effect waves-light btn red" href="javascript:$('.theSlider').slick('slickPrev');"><i class="material-icons left">navigate_before</i>Back</a>
+      <a class="waves-effect waves-light btn blue" href="javascript:$('.theSlider').slick('slickNext');"><i class="material-icons right">navigate_next</i>Next</a>
+    </div>
+
+</div>
+  
+  <div class='slide'>
+    <p class='question'>
+    how long does it take you to recover? (lower numbers would mean it takes you less time to return to baseline after an internal or external change; higher numbers would mean it takes you more time to return to baseline after an internal or external change.)
+    </p>
+    <p class='rangeslider range-field'>
+      <input type='range' id='slider7' min='1' max='10' step='1'>
+    </p>
+    <div class='options'>
+      <a class="waves-effect waves-light btn red" href="javascript:$('.theSlider').slick('slickPrev');"><i class="material-icons left">navigate_before</i>Back</a>
+      <a class="waves-effect waves-light btn blue" href="javascript:$('.theSlider').slick('slickNext');"><i class="material-icons right">navigate_next</i>Next</a>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+  </div>
+
+  <footer class="page-footer orange" style='background:black!important'>
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
+          <h5 class="white-text">Project Info</h5>
           <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
 
 
@@ -116,7 +172,6 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
   </footer>
@@ -126,6 +181,57 @@
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" />
 
   </body>
+  <style>
+    body,html{
+      background:#606060;
+      height: 100vh;
+      width: 100vw;
+    }
+    .container{
+      padding-top: 70px;
+      height: 90vh;
+    }
+    .slide{
+      height: 88vh;
+    }
+    .slide .question{
+      color: white;
+      padding: 10vh 0 10vh 0;
+      height: 50vh;
+      font-size: 30px;
+
+    }
+    .slide .options{
+      text-align:center;
+    }
+    .rangeslider{
+      padding: 20px 0;
+    }
+    .rangeslider input{
+      width: 80%;
+      margin-left:10%;
+    }
+    .heading{
+      text-align:center;
+      font: 3rem 'Fira Sans', sans-serif;
+      color: #606060;
+      -webkit-text-stroke: 1px white;
+      letter-spacing: 7px;
+    }
+  </style>
+  <script>
+function start()
+{
+  $('.theSlider').slick({
+    arrows:false,
+    dots:false,
+    swipe:false
+  });
+}
+  </script>
 </html>
