@@ -58,6 +58,7 @@ The between of you and another = the function of [the function of (your personal
 
   <div class='slide'>
     <p class='question'>
+    <b> Question 2/7 </b><br>
     how pleasant is this feeling? (lower numbers would mean this feeling is less enjoyable; higher numbers would mean this feeling is more enjoyable.)
     </p>
     <p class='rangeslider range-field'>
@@ -71,6 +72,7 @@ The between of you and another = the function of [the function of (your personal
 
   <div class='slide'>
     <p class='question'>
+    <b> Question 3/7 </b><br>
     how much control do you have over this feeling? (lower numbers would mean you’re aware of this feeling but it isn’t dictating your thoughts or behavior; higher numbers would mean this feeling is controlling your current thoughts or behavior.)
     </p>
     <p class='rangeslider range-field'>
@@ -84,6 +86,7 @@ The between of you and another = the function of [the function of (your personal
   
   <div class='slide'>
     <p class='question'>
+    <b> Question 4/7 </b><br>
     how intense is this feeling? (lower numbers would mean this feeling is more subtle; higher numbers would mean this feeling is more extreme.)
     </p>
     <p class='rangeslider range-field'>
@@ -97,6 +100,7 @@ The between of you and another = the function of [the function of (your personal
   
   <div class='slide'>
     <p class='question'>
+    <b> Question 5/7 </b><br>
     how sensitive are you? (lower numbers would mean you are less affected by internal or external changes; higher numbers would mean you are more affected by internal or external changes.)
     </p>
     <p class='rangeslider range-field'>
@@ -110,6 +114,7 @@ The between of you and another = the function of [the function of (your personal
   
   <div class='slide'>
     <p class='question'>
+    <b> Question 6/7 </b><br>
     how reactive are you? (lower numbers would mean you are less outwardly expressive in response to internal or external changes; higher numbers would mean you are more expressive in response to internal or external changes.)
     </p>
     <p class='rangeslider range-field'>
@@ -124,6 +129,7 @@ The between of you and another = the function of [the function of (your personal
   
   <div class='slide'>
     <p class='question'>
+    <b> Question 7/7 </b><br>
     how long does it take you to recover? (lower numbers would mean it takes you less time to return to baseline after an internal or external change; higher numbers would mean it takes you more time to return to baseline after an internal or external change.)
     </p>
     <p class='rangeslider range-field'>
@@ -131,12 +137,16 @@ The between of you and another = the function of [the function of (your personal
     </p>
     <div class='options'>
       <a class="waves-effect waves-light btn red" href="javascript:$('.theSlider').slick('slickPrev');"><i class="material-icons left">navigate_before</i>Back</a>
-      <a class="waves-effect waves-light btn blue" href="javascript:$('.theSlider').slick('slickNext');"><i class="material-icons right">navigate_next</i>Next</a>
+      <a class="waves-effect waves-light btn blue" href="javascript:makeViz();$('.theSlider').slick('slickNext');"><i class="material-icons right">navigate_next</i>See Visualization</a>
     </div>
   </div>
 
   <div class='slide'>
-    <iframe src='viewer'></iframe>
+    <iframe id='vizFrame' src='viewer'></iframe>
+    <div class='options'>
+      <a class="waves-effect waves-light btn red" href="javascript:$('.theSlider').slick('slickPrev');"><i class="material-icons left">navigate_before</i>Back</a>
+      <a class="waves-effect waves-light btn blue" href="javascript:$('.theSlider').slick('slickNext');"><i class="material-icons left">refresh</i>Start Over</a>
+    </div>
   </div>
 </div>
 
@@ -206,7 +216,11 @@ The between of you and another = the function of [the function of (your personal
       padding: 10vh 0 10vh 0;
       height: 50vh;
       font-size: 30px;
-
+      text-align:justify;
+    }
+    .slide .question b{
+      display:block;
+      text-align:center;
     }
     .slide .options{
       text-align:center;
@@ -225,6 +239,11 @@ The between of you and another = the function of [the function of (your personal
       -webkit-text-stroke: 1px white;
       letter-spacing: 7px;
     }
+    #vizFrame{
+      width:100%;
+      height: 88%;
+      border:none;
+    }
   </style>
   <script>
 function start()
@@ -234,6 +253,18 @@ function start()
     dots:false,
     swipe:false
   });
+}
+function makeViz()
+{
+  var url = "viewer#";
+  url += document.getElementById("slider1").value + ",";
+  url += document.getElementById("slider2").value + ",";
+  url += document.getElementById("slider3").value + ",";
+  url += document.getElementById("slider4").value + ",";
+  url += document.getElementById("slider5").value + ",";
+  url += document.getElementById("slider6").value + ",";
+  url += document.getElementById("slider7").value
+  document.getElementById("vizFrame").src = url;
 }
   </script>
 </html>
