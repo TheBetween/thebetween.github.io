@@ -135,7 +135,7 @@ The between of you and another = the function of [the function of (your personal
     </p>
     <div class='options'>
       <a class="waves-effect waves-light btn white" href="javascript:goPrev();"><i class="material-icons left">navigate_before</i>Back</a>
-      <a class="waves-effect waves-light btn gray" href="javascript:makeViz();goNext();"><i class="material-icons right">navigate_next</i>Visualization</a>
+      <a class="waves-effect waves-light btn gray" href="javascript:goNext();makeViz();"><i class="material-icons right">navigate_next</i>Visualization</a>
     </div>
   </div>
 
@@ -194,9 +194,54 @@ The between of you and another = the function of [the function of (your personal
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" />
-
+  <div class='fadeBox'> <div class='spinner'> </div> </div>
   </body>
   <style>
+  @-webkit-keyframes infinite-spinning {
+     from {
+       -webkit-transform: rotate(0deg);
+     }
+     to {
+       -webkit-transform: rotate(360deg);
+     }
+  }
+  @keyframes infinite-spinning {
+     0% {
+       -moz-transform: rotate(0deg);
+       -o-transform: rotate(0deg);
+       -ms-transform: rotate(0deg);
+       transform: rotate(0deg);
+     }
+     100% {
+       -moz-transform: rotate(0deg);
+       -o-transform: rotate(0deg);
+       -ms-transform: rotate(0deg);
+       transform: rotate(360deg);
+     }
+  }
+
+
+.fadeBox{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,.6);
+}
+
+.spinner{
+    -webkit-animation: infinite-spinning 1s infinite linear;
+    animation: infinite-spinning 1s infinite linear;
+    width: 50px;
+    min-height: 50px;
+    margin: auto;
+    background: url(./img/ac.png) no-repeat center;
+    background-size: contain;
+    margin-top: 42vh;
+    display: block;
+}
+
     body,html{
       background:#606060;
       height: 100vh;
@@ -264,6 +309,15 @@ The between of you and another = the function of [the function of (your personal
     }
   </style>
   <script>
+var AI = {
+  show: function(){
+    $(".fadeBox").fadeIn(0)
+  },
+  hide: function(){
+    $(".fadeBox").fadeOut();
+  }
+}
+
 function start()
 {
   $('.theSlider').slick({
@@ -271,9 +325,12 @@ function start()
     dots:false,
     swipe:false
   });
+  AI.hide();
 }
 function makeViz()
 {
+  AI.show();
+  setTimeout("AI.hide()", 3000);
   var url = "viewer#";
   url += document.getElementById("slider1").value + ",";
   url += document.getElementById("slider2").value + ",";
