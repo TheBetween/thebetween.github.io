@@ -14,7 +14,7 @@
 <body onload='start()'>
 
 <div class="navbar-fixed" style='width:100%;text-align:center;position:fixed;background:#343434'>
-      <a style='padding-top:10px;display:block' id="logo-container" href="#" class="heading">the between</a>
+      <a style='padding-top:10px;margin-bottom:10px;display:block' id="logo-container" href="#" class="heading">the between</a>
 </div><!-- navbar-fixed -->
 
 
@@ -22,9 +22,7 @@
 
 <div class="theSlider">
   <div class='slide'>
-    <h1 class='heading'>
-    </h1>
-    <div style='color:white; font-size:3vw;'>
+    <div class='question' style='margin-top:10px;color:white; font-size:2.0vh;'>
     <p>
     The between of your personal context and current state is here symbolized by temperament (a more fixed aspect of you) and emotion (a more changing aspect of you), although context could also include personal history, culture, and learned defenses; current state could also include bodily state and immediate happenings.
     </p><p>
@@ -37,7 +35,7 @@ The between of you and another = the function of [the function of (your personal
   </div>
 
     <div class='options'>
-      <a class="waves-effect waves-light btn blue" href="javascript:goNext();"><i class="material-icons right">navigate_next</i>Start</a>
+      <a style='float:none;right:0' class="waves-effect waves-light btn blue" href="javascript:goNext();"><i class="material-icons right">navigate_next</i>Start</a>
     </div>
   </div>
 
@@ -137,7 +135,7 @@ The between of you and another = the function of [the function of (your personal
     </p>
     <div class='options'>
       <a class="waves-effect waves-light btn red" href="javascript:goPrev();"><i class="material-icons left">navigate_before</i>Back</a>
-      <a class="waves-effect waves-light btn blue" href="javascript:makeViz();goNext();"><i class="material-icons right">navigate_next</i>See Visualization</a>
+      <a class="waves-effect waves-light btn blue" href="javascript:makeViz();goNext();"><i class="material-icons right">navigate_next</i>Visualization</a>
     </div>
   </div>
 
@@ -207,16 +205,22 @@ The between of you and another = the function of [the function of (your personal
     .container{
       padding-top: 70px;
       height: 90vh;
+      width: 100%;
+      margin-left:0;
     }
     .slide{
       height: 88vh;
     }
     .slide .question{
       color: white;
-      padding: 10vh 0 10vh 0;
-      height: 50vh;
-      font-size: 4vw;
+      padding: 30px 0 10px 0;
+      height: auto;
+      min-height: 50vh;
+      font-size: 3vh;
       text-align:justify;
+      max-width:700px;
+      width: 90%;
+      margin:auto;
     }
     .slide .question b{
       display:block;
@@ -224,6 +228,14 @@ The between of you and another = the function of [the function of (your personal
     }
     .slide .options{
       text-align:center;
+    }
+    .slide .options .red{
+      float:left;
+      left: 5%;
+    }
+    .slide .options .blue{
+      float:right;
+      right: 5%;
     }
     .rangeslider{
       padding: 20px 0;
