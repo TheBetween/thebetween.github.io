@@ -151,4 +151,5 @@ function start(){
   setValue({id:"0e1707a2-9707-4302-a3b1-51a46352164e", value:args[4]})
   setValue({id:"6deadaa2-0cf1-47ee-9460-83aa6913c92c", value:args[5]})
   setValue({id:"6882aa09-d6c3-48ca-aef8-912aa2327511", value:args[6]})
+  setTimeout("getImageofViz()", 4000);
 }
