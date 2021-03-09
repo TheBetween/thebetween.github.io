@@ -47,7 +47,14 @@ app.get("/getProjects", function(req,res){
 })
 
 app.use(express.static(path.join(__dirname, 'docs')));
-app.listen(8080);
+// DO NOT DO app.listen() unless we're testing this directly
+if (require.main === module) { app.listen(8080); }
+// Instead do export the app:
+else{ module.exports = app; }
+
+
+
+
 
 // route middleware to ensure user is logged in
 function isLoggedIn(req, res, next) {
